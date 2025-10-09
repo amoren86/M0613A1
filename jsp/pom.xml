@@ -10,18 +10,21 @@
 	<name>jsp</name>
 
 	<properties>
+		<!-- Encoding and Compiler -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.source>17</maven.compiler.source>
-		<maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
-		<compiler-plugin.version>3.11.0</compiler-plugin.version>
-		<war-plugin.version>3.3.2</war-plugin.version>
+		<maven.compiler.release>17</maven.compiler.release>
+
+		<!-- Jakarta -->
 		<jakartaee-api.version>10.0.0</jakartaee-api.version>
 		<jakarta.servlet.jsp.jstl>3.0.0</jakarta.servlet.jsp.jstl>
 
+		<!-- Maven Plugins -->
+		<compiler-plugin.version>3.11.0</compiler-plugin.version>
+		<war-plugin.version>3.3.2</war-plugin.version>
 	</properties>
 
 	<dependencies>
-		<!-- Jakarta J2EE implementation -->
+		<!-- Jakarta web api-->
 		<dependency>
 			<groupId>jakarta.platform</groupId>
 			<artifactId>jakarta.jakartaee-web-api</artifactId>
@@ -30,10 +33,11 @@
 		</dependency>
 		<!-- Jakarta JSTL -->
 		<dependency>
-			<groupId>jakarta.servlet.jsp.jstl</groupId>
-			<artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+			<groupId>org.glassfish.web</groupId>
+			<artifactId>jakarta.servlet.jsp.jstl</artifactId>
 			<version>${jakarta.servlet.jsp.jstl}</version>
 		</dependency>
+		
 	</dependencies>
 
 	<build>
