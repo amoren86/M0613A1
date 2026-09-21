@@ -19,10 +19,6 @@ public class HelloWorldXmlServlet extends HttpServlet {
 	 */
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		processRequest(request, response);
-	}
-
-	protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		response.setContentType("text/html;charset=UTF-8");
 		try (PrintWriter out = response.getWriter()) {
 			/* TODO output your page here. You may use following sample code. */
@@ -32,7 +28,10 @@ public class HelloWorldXmlServlet extends HttpServlet {
 			out.println("<title>Servlet HelloWorld</title>");
 			out.println("</head>");
 			out.println("<body>");
-			out.println("<h1>Servlet HelloWorld at " + request.getContextPath() + "</h1>");
+			out.println("	<header>");
+			out.println("		<h1>Servlet HelloWorldXml at " + request.getContextPath() + "</h1>");
+			out.println("		<p>An app by Institut Marianao</p>");
+			out.println("	</header>");
 			out.println("</body>");
 			out.println("</html>");
 		}
