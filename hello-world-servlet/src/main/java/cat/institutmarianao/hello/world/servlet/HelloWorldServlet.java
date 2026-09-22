@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class HelloWorldServlet
  */
-@WebServlet(name = "HelloWorld", urlPatterns = { "/HelloWorld" })
+@WebServlet(name = "HelloWorld", urlPatterns = { "/hello-world" })
 public class HelloWorldServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
