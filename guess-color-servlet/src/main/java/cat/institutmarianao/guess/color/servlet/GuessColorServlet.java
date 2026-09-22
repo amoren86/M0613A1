@@ -14,7 +14,7 @@ import jakarta.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class GuessColorServlet
  */
-@WebServlet(urlPatterns = { "/GuessColor" }, initParams = { @WebInitParam(name = "color", value = "green") })
+@WebServlet(urlPatterns = { "/guess-color" }, initParams = { @WebInitParam(name = "color", value = "green") })
 public class GuessColorServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
