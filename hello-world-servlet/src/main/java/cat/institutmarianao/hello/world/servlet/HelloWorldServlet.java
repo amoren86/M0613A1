@@ -19,9 +19,13 @@ public class HelloWorldServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
+	// Method doGet is executed every time the servlet receives a GET request
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		// Set the content type of the response to HTML with UTF-8 encoding
 		response.setContentType("text/html;charset=UTF-8");
+		// Get the PrintWriter to write the response
+		// The response is sent back to the client (browser)
 		try (PrintWriter out = response.getWriter()) {
 			/* TODO output your page here. You may use following sample code. */
 			out.println("<!DOCTYPE html>");
