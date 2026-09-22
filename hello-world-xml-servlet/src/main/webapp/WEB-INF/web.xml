@@ -11,7 +11,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>HelloWorldXml</servlet-name>
-		<url-pattern>/HelloWorldXml</url-pattern>
+		<url-pattern>/hello-world-xml</url-pattern>
 	</servlet-mapping>
 	
 	<session-config>
