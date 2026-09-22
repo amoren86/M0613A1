@@ -66,7 +66,7 @@ public class GuessColorServlet extends HttpServlet {
 			out.println("		<p>An app by Institut Marianao</p>");
 			out.println("	</header>");
 			out.println("	<h3>" + result + "</h3>");
-			out.println("	<a href=\"GuessColor.html\">Try again</a>");
+			out.println("	<a href=\"guess-color.html\">Try again</a>");
 			out.println("</body>");
 			out.println("</html>");
 		}
