@@ -28,10 +28,21 @@ public class Promo2Servlet extends HttpServlet {
 
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// Comment one of the following lines, but not both, to test forwards or
-		// redirects
-		forward(request, response);
-		// redirect(request, response);
+		// Comment one of the following lines, but not both, to test redirect and
+		// forward
+		redirect(request, response);
+		// forward(request, response);
+	}
+
+	private void redirect(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		String requestIp = request.getRemoteAddr();
+
+		if (ip.add(requestIp)) {
+			response.sendRedirect(FIRST_TIME_HTML);
+
+		} else {
+			response.sendRedirect(NOT_FIRST_TIME_HTML);
+		}
 	}
 
 	private void forward(HttpServletRequest request, HttpServletResponse response)
@@ -45,16 +56,5 @@ public class Promo2Servlet extends HttpServlet {
 			rs = request.getRequestDispatcher(NOT_FIRST_TIME_HTML);
 		}
 		rs.forward(request, response);
-	}
-
-	private void redirect(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		String requestIp = request.getRemoteAddr();
-
-		if (ip.add(requestIp)) {
-			response.sendRedirect(FIRST_TIME_HTML);
-
-		} else {
-			response.sendRedirect(NOT_FIRST_TIME_HTML);
-		}
 	}
 }
