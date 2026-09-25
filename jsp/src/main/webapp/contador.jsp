@@ -8,9 +8,7 @@
 </head>
 <body>
 	<h1>
-	<%-- Hola has executat aquesta p&aacute;gina
-		<%=comptador++%>
-		vegades. --%>
+	Hola has executat aquesta p&aacute;gina <%=comptador++%> vegades
 	</h1>
 </body>
 </html>

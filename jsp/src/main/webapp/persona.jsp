@@ -9,8 +9,7 @@
 	String email = "oswin@dr.who";
 	boolean treballa = false;
 	float alcada = 167.23f;
-	%>
-	<%	int comptador=0; %>
+	int comptador=0; %>
 <!DOCTYPE html>
 <html>
 <head>
