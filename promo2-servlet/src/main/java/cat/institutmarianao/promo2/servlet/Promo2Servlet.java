@@ -30,8 +30,8 @@ public class Promo2Servlet extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Comment one of the following lines, but not both, to test redirect and
 		// forward
-		redirect(request, response);
-		// forward(request, response);
+		// redirect(request, response);
+		forward(request, response);
 	}
 
 	private void redirect(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -39,7 +39,6 @@ public class Promo2Servlet extends HttpServlet {
 
 		if (ip.add(requestIp)) {
 			response.sendRedirect(FIRST_TIME_HTML);
-
 		} else {
 			response.sendRedirect(NOT_FIRST_TIME_HTML);
 		}

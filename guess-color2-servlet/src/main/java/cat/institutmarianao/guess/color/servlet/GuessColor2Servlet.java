@@ -11,6 +11,12 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet(urlPatterns = "/guess-color", initParams = { @WebInitParam(name = "color", value = "red") })
 public class GuessColor2Servlet extends HttpServlet {
+	private static final String LOOSE_HTML = "loose.html";
+
+	private static final String WIN_HTML = "win.html";
+
+	private static final String GUESS_COLOR_HTML = "guess_color.html";
+
 	private static final long serialVersionUID = 1L;
 
 	private String initColor;
@@ -30,16 +36,34 @@ public class GuessColor2Servlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		// redirect(request, response);
+		forward(request, response);
+	}
 
+	private void redirect(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		// L'usuari ha seleccionat un color i ho ha enviat.
 		String paramColor = request.getParameter("color");
 
 		if (paramColor == null) {
-			response.sendRedirect("guess_color.html");
+			response.sendRedirect(GUESS_COLOR_HTML);
 		} else if (initColor.equalsIgnoreCase(paramColor)) {
-			response.sendRedirect("win.html");
+			response.sendRedirect(WIN_HTML);
 		} else {
-			response.sendRedirect("loose.html");
+			response.sendRedirect(LOOSE_HTML);
+		}
+	}
+
+	private void forward(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// L'usuari ha seleccionat un color i ho ha enviat.
+		String paramColor = request.getParameter("color");
+
+		if (paramColor == null) {
+			request.getRequestDispatcher(GUESS_COLOR_HTML).forward(request, response);
+		} else if (initColor.equalsIgnoreCase(paramColor)) {
+			request.getRequestDispatcher(WIN_HTML).forward(request, response);
+		} else {
+			request.getRequestDispatcher(LOOSE_HTML).forward(request, response);
 		}
 	}
 }
