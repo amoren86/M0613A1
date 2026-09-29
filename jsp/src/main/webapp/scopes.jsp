@@ -1,5 +1,5 @@
-<%@ taglib uri="jakarta.tags.core" prefix="c"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="jakarta.tags.core" prefix="c"%>
 <html>
 <head>
 <title>Variable scopes examples</title>
@@ -9,12 +9,12 @@
 		<h1>Variable scopes</h1>
 		<p>An app by Institut Marianao</p>
 	</header>
-	<c:set var="test" value="Page scope"
+	<c:set var="test" value="Page"
 		scope="page" />
-	<c:set var="test" value="Request scope"
+	<c:set var="test" value="Request"
 		scope="request" />
 
-	<c:set var="test" value="Session scope"
+	<c:set var="test" value="Session"
 		scope="session" />
 
 	<c:set var="test" value="Application"
