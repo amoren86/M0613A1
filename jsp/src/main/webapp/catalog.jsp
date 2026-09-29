@@ -27,9 +27,9 @@
 	<%
         String storeName = "Tech Shop";
         Map<String, Double> products = new HashMap<>();
-        products.put("Keyboard",30.99);
-        products.put("Mouse",15.49);
-        products.put("Monitor",150.00);
+        products.put("Keyboard", 30.99);
+        products.put("Mouse", 15.49);
+        products.put("Monitor", 150.00);
     %>
 
 	<!-- HTML Header with JSP Expressions -->
