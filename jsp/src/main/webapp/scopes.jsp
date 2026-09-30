@@ -1,5 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib uri="jakarta.tags.core" prefix="c"%>
+<%@taglib uri="jakarta.tags.core" prefix="c"%>
 <html>
 <head>
 <title>Variable scopes examples</title>
