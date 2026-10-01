@@ -4,9 +4,8 @@
         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
         version="6.0" metadata-complete="false">
         
-
         <welcome-file-list>
-                <welcome-file>welcome.html</welcome-file>
+                <welcome-file>gross_salary.jsp</welcome-file>
         </welcome-file-list>
 
         <session-config>
