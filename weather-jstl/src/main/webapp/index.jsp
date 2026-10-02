@@ -29,7 +29,7 @@
 	<x:parse var="parsedDoc" doc="${doc}" />
 
 	<div class="container">
-		<h1>Weather</h1>
+		<h1>Weather JSTL</h1>
 		<h4><fmt:formatDate value="${now}" dateStyle="full" /></h4>
 		<h3>Forecast for Barcelona province</h3>
 		<p></p>

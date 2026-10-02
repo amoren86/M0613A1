@@ -5,18 +5,13 @@ import jakarta.ejb.LocalBean;
 import jakarta.ejb.Stateless;
 
 /**
- * Session Bean implementation class SalaryCalculationBean
+ * Stateless EJB that implements the SalaryCalculationBeanLocal interface. This
+ * bean provides methods to calculate withholding and net salary based on the
+ * number of children and gross salary.
  */
 @Stateless
 @LocalBean
 public class SalaryCalculationBean implements SalaryCalculationBeanLocal {
-
-	/**
-	 * Default constructor.
-	 */
-	public SalaryCalculationBean() {
-		// TODO Auto-generated constructor stub
-	}
 
 	@Override
 	public double calculateWithholding(int children) {

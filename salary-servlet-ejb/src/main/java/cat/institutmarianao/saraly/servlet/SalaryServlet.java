@@ -13,6 +13,12 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+/**
+ * Servlet that handles salary calculations. It receives the gross salary and
+ * number of children from the request, calculates the withholding and net
+ * salary using the SalaryCalculationBean EJB, and forwards the results to a JSP
+ * page for display.
+ */
 @WebServlet("/salary")
 public class SalaryServlet extends HttpServlet {
 
