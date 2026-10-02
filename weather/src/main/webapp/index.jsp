@@ -6,6 +6,7 @@
 <%@page import="javax.xml.parsers.DocumentBuilderFactory"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.Date"%>
+<%@page import="cat.institutmarianao.weather.util.SSLUtils" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -25,6 +26,8 @@
 <body>
 	<div class="container">
 		<%
+	    SSLUtils.disableCertificateValidation();
+
 		Date now = new Date();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		String yyyyMMdd = sdf.format(now);
@@ -45,7 +48,7 @@
 		<h3>Forecast for Barcelona province</h3>
 		<p></p>
 		<p>
-			<%--=prediccio.item(0).getNodeValue()--%>
+			<%=prediccio.item(0).getChildNodes().item(1).getChildNodes().item(0).getNodeValue()%>
 		</p>
 		<p></p>
 		<table class="table table-striped">
