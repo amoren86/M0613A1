@@ -1,10 +1,10 @@
 <%-- JSP Server-side Comment: Traditional JSP Syntax Overview --%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html" pageEncoding="UTF-8"%>
 
-<%@page import="java.util.Date"%>
-<%@page import="java.util.List"%>
-<%@page import="java.util.Map"%>
-<%@page import="java.util.HashMap"%>
+<%@ page import="java.util.Date"%>
+<%@ page import="java.util.List"%>
+<%@ page import="java.util.Map"%>
+<%@ page import="java.util.HashMap"%>
 
 <%!
     // Declaration: Method defined at Servlet class level

@@ -1,13 +1,13 @@
-<%@page import="org.w3c.dom.Node"%>
-<%@page import="org.w3c.dom.Document"%>
-<%@page import="org.w3c.dom.Element"%>
-<%@page import="org.w3c.dom.NodeList"%>
-<%@page import="javax.xml.parsers.*"%>
-<%@page import="javax.xml.parsers.DocumentBuilderFactory"%>
-<%@page import="java.text.SimpleDateFormat"%>
-<%@page import="java.util.Date"%>
-<%@page import="cat.institutmarianao.weather.util.SSLUtils" %>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page import="org.w3c.dom.Node"%>
+<%@ page import="org.w3c.dom.Document"%>
+<%@ page import="org.w3c.dom.Element"%>
+<%@ page import="org.w3c.dom.NodeList"%>
+<%@ page import="javax.xml.parsers.*"%>
+<%@ page import="javax.xml.parsers.DocumentBuilderFactory"%>
+<%@ page import="java.text.SimpleDateFormat"%>
+<%@ page import="java.util.Date"%>
+<%@ page import="cat.institutmarianao.weather.util.SSLUtils" %>
+<%@ page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
