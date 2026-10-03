@@ -1,4 +1,4 @@
-package cat.institutmarianao.post.servlet.ejb.impl;
+package cat.institutmarianao.post.servlet.ejb;
 
 import jakarta.ejb.Local;
 import jakarta.validation.constraints.Email;
@@ -14,19 +14,19 @@ import jakarta.validation.constraints.Size;
  */
 @Local
 public interface PostBeanLocal {
-	@NotBlank
+	@NotBlank(message = "<b>Email:</b> The e-mail cannot be blank")
 	@Email(message = "<b>Email:</b> The e-mail is not valid")
 	String getEmail();
 
 	void setEmail(String email);
 
-	@Min(value = 18, message = "<b>Age:</b>You must be older than 18 to write a message")
+	@Min(value = 18, message = "<b>Age:</b> You must be older than 18 to write a message")
 	int getAge();
 
 	void setAge(String age);
 
-	@NotBlank
-	@Size(min = 1, max = 150, message = "<b>Message:</b>The message must have at most 150 characters")
+	@NotBlank(message = "<b>Message:</b> The message cannot be blank")
+	@Size(max = 150, message = "<b>Message:</b> The message must have at most 150 characters")
 	String getMessage();
 
 	void setMessage(String message);

@@ -1,6 +1,6 @@
-package cat.institutmarianao.post.servlet.ejb;
+package cat.institutmarianao.post.servlet.ejb.impl;
 
-import cat.institutmarianao.post.servlet.ejb.impl.PostBeanLocal;
+import cat.institutmarianao.post.servlet.ejb.PostBeanLocal;
 import jakarta.ejb.LocalBean;
 import jakarta.ejb.Stateful;
 

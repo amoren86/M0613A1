@@ -5,7 +5,7 @@
         version="6.0" metadata-complete="false">
         
         <welcome-file-list>
-                <welcome-file>send_post.jsp</welcome-file>
+                <welcome-file>post</welcome-file>
         </welcome-file-list>
 
         <session-config>
