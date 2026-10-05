@@ -1,7 +1,6 @@
 package cat.institutmarianao.saraly.servlet.ejb.impl;
 
 import cat.institutmarianao.saraly.servlet.ejb.SalaryCalculationBeanLocal;
-import jakarta.ejb.LocalBean;
 import jakarta.ejb.Stateless;
 
 /**
@@ -10,7 +9,6 @@ import jakarta.ejb.Stateless;
  * number of children and gross salary.
  */
 @Stateless
-@LocalBean
 public class SalaryCalculationBean implements SalaryCalculationBeanLocal {
 
 	@Override

@@ -1,7 +1,6 @@
 package cat.institutmarianao.post.servlet.ejb.impl;
 
 import cat.institutmarianao.post.servlet.ejb.PostBeanLocal;
-import jakarta.ejb.LocalBean;
 import jakarta.ejb.Stateful;
 
 /**
@@ -11,7 +10,6 @@ import jakarta.ejb.Stateful;
  * retrieve and update the values as needed.
  */
 @Stateful
-@LocalBean
 public class PostBean implements PostBeanLocal {
 
 	private String email;
