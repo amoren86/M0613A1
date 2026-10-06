@@ -1,6 +1,6 @@
-package cat.institutmarianao.saraly.servlet.ejb.impl;
+package cat.institutmarianao.salary.servlet.ejb.impl;
 
-import cat.institutmarianao.saraly.servlet.ejb.SalaryCalculationBeanLocal;
+import cat.institutmarianao.salary.servlet.ejb.SalaryCalculationBeanLocal;
 import jakarta.ejb.Stateless;
 
 /**

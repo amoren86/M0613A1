@@ -1,4 +1,4 @@
-package cat.institutmarianao.saraly.servlet.ejb;
+package cat.institutmarianao.salary.servlet.ejb;
 
 import jakarta.ejb.Local;
 

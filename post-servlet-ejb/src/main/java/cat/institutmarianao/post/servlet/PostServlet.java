@@ -42,8 +42,7 @@ public class PostServlet extends HttpServlet {
 			throws ServletException, IOException {
 		try {
 			// Look up the PostBean EJB using JNDI
-			postBean = (PostBeanLocal) new InitialContext().lookup(
-					"java:global/post-servlet-ejb/PostBean!cat.institutmarianao.post.servlet.ejb.impl.PostBean");
+			postBean = (PostBeanLocal) new InitialContext().lookup("java:global/post-servlet-ejb/PostBean");
 			RequestDispatcher dispatcher = request.getRequestDispatcher("send_post.jsp");
 			request.setAttribute("postBean", postBean);
 			dispatcher.forward(request, response);
@@ -56,6 +55,10 @@ public class PostServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException {
+		// Set the character encoding to UTF-8 to handle special characters in the
+		// request parameters
+		request.setCharacterEncoding("UTF-8");
+
 		// List to hold validation errors
 		List<ConstraintViolation<PostBeanLocal>> errors = new ArrayList<>();
 
