@@ -10,23 +10,21 @@
 	<jsp:include page="sections/header.jsp" />
 	<h3>Write a message:</h3>
 	<form action="post" method="post">
-		<c:if test="${not empty errors}">
-			<c:forEach items="${errors}" var="error">
-				<p style="color: red">
-					<c:out value="${error.message}" escapeXml="false" />
-				</p>
-			</c:forEach>
-		</c:if>
+		<c:forEach items="${errors}" var="error">
+			<p style="color: red">
+				<c:out value="${error.message}" escapeXml="false" />
+			</p>
+		</c:forEach>
 		<table>
 			<tr>
 				<td><label for="email">E-mail:</label></td>
-				<td><input id="email" type="text" name="email" value="${postBean.email}"
-						style="width: stretch" /></td>
+				<td><input id="email" type="text" name="email"
+						value="${postBean.email}" style="width: stretch" /></td>
 			</tr>
 			<tr>
 				<td><label for="age">Age:</label></td>
-				<td><input id="age" type="number" name="age" min="0" max="120" value="${postBean.age}"
-						style="width: stretch"></td>
+				<td><input id="age" type="number" name="age" min="0" max="120"
+						value="${postBean.age}" style="width: stretch"></td>
 			</tr>
 			<tr>
 				<td><label for="message">Message:</label></td>

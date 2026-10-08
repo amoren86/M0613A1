@@ -1,8 +1,7 @@
 package cat.institutmarianao.post.servlet;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Set;
 import java.util.logging.Logger;
 
 import javax.naming.InitialContext;
@@ -59,9 +58,6 @@ public class PostServlet extends HttpServlet {
 		// request parameters
 		request.setCharacterEncoding("UTF-8");
 
-		// List to hold validation errors
-		List<ConstraintViolation<PostBeanLocal>> errors = new ArrayList<>();
-
 		// Retrieve parameters from the request
 		String mail = request.getParameter("email");
 		String age = request.getParameter("age");
@@ -73,7 +69,7 @@ public class PostServlet extends HttpServlet {
 		postBean.setAge(age);
 
 		// Validate the PostBean and collect any validation errors
-		errors.addAll(validator.validate(postBean));
+		Set<ConstraintViolation<PostBeanLocal>> errors = validator.validate(postBean);
 
 		// Determine the appropriate JSP page to forward to based on validation results
 		RequestDispatcher dispatcher;
