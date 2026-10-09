@@ -7,10 +7,7 @@
 </head>
 <body>
 	<jsp:include page="sections/header.jsp" />
-	<h3>We received "${field}" and we are going to keep it across
-		requests...</h3>
-	<form action="retrieve_state_management" method="post">
-		<input type="submit" value="click to do nothing, cause parameter is in session">
-	</form>
+	<h3>Click continue to send "${field}" as parameter in the url</h3>
+	<a href="retrieve_url_rewrite?field=${field}">Continue</a>
 </body>
 </html>

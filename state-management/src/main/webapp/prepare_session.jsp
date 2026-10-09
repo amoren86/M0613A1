@@ -7,10 +7,9 @@
 </head>
 <body>
 	<jsp:include page="sections/header.jsp" />
-	<h3>We received "${field}" and we are going to keep it across
-		requests...</h3>
-	<a
-		href="retrieve_state_management?field=${field}">
-		click to pass state as parameter in the url</a>
+	<h3>We have "${sessionScope.field}" in session</h3>
+	<form action="retrieve_session" method="post">
+		<input type="submit" value="Continue">
+	</form>
 </body>
 </html>

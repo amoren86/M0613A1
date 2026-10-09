@@ -11,17 +11,20 @@
 	<form action="prepare_state_management" method="post">
 		<label for="field">Enter something here:</label>
 		<input id="field" type="text" name="field" />
-		<p/>
-		Select state management method:
-		<br>
-		<input id="url_rewrite" type="radio" name="stateManagementMethod" value="URL_REWRITE" checked="checked" >
+		<p />
+		Select state management method: <br>
+		<input id="url_rewrite" type="radio" name="prepare_method"
+			value="prepare_url_rewrite" checked="checked">
 		<label for="url_rewrite">Url parameter</label><br>
-		<input id="hidden_field" type="radio" name="stateManagementMethod" value="HIDDEN_FIELD">
+		<input id="hidden_field" type="radio" name="prepare_method"
+			value="prepare_hidden_field">
 		<label for="hidden_field">Form hidden field parameter</label><br>
-		<input id="session" type="radio" name="stateManagementMethod" value="SESSION">
-		<label for="session">Session parameter</label><br>
-		<input id="cookie" type="radio" name="stateManagementMethod" value="COOKIE">
+		<input id="cookie" type="radio" name="prepare_method"
+			value="prepare_cookie">
 		<label for="cookie">Cookie parameter</label><br>
+		<input id="session" type="radio" name="prepare_method"
+			value="prepare_session">
+		<label for="session">Session parameter</label><br>
 		<input type="submit">
 	</form>
 </body>

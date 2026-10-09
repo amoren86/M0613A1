@@ -7,12 +7,10 @@
 </head>
 <body>
 	<jsp:include page="sections/header.jsp" />
-	<h3>We received "${field}" and we are going to keep it across
-		requests...</h3>
-	<form action="retrieve_state_management" method="post">
+	<h3>Click continue to send "${field}" as hidden parameter in form</h3>
+	<form action="retrieve_hidden_field" method="post">
 		<input type="hidden" name="field" value="${field}">
-		<input type="submit"
-			value="click to pass state as hidden parameter in form">
+		<input type="submit" value="Continue">
 	</form>
 </body>
 </html>

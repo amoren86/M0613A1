@@ -5,7 +5,7 @@
         version="6.0" metadata-complete="false">
         
         <welcome-file-list>
-                <welcome-file>enter_field.jsp</welcome-file>
+                <welcome-file>select_state_management.jsp</welcome-file>
         </welcome-file-list>
 
         <session-config>

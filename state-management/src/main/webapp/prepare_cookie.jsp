@@ -7,10 +7,9 @@
 </head>
 <body>
 	<jsp:include page="sections/header.jsp" />
-	<h3>We received "${cookie.field.value}" and we are going to keep it across
-		requests...</h3>
-	<form action="retrieve_state_management" method="post">
-		<input type="submit" value="click to do nothing, cause parameter is in a cookie">
+	<h3>We have "${cookie.field.value}" in a cookie</h3>
+	<form action="retrieve_cookie" method="post">
+		<input type="submit" value="Continue">
 	</form>
 </body>
 </html>

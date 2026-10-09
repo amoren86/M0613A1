@@ -4,8 +4,6 @@ import java.io.IOException;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 
-import cat.institutmarianao.state.management.StateManagementMethod;
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.Cookie;
@@ -13,7 +11,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/prepare_state_management")
+@WebServlet({ "/prepare_state_management" })
 public class PrepareStateManagementServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -23,36 +21,27 @@ public class PrepareStateManagementServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 
 		String field = request.getParameter("field");
-		StateManagementMethod stateManagementMethod = StateManagementMethod
-				.valueOf(request.getParameter("stateManagementMethod"));
+		String prepareMethod = request.getParameter("prepare_method");
 
-		request.getSession().setAttribute("stateManagementMethod", stateManagementMethod);
-
-		RequestDispatcher dispatcher;
-
-		switch (stateManagementMethod) {
-		case URL_REWRITE:
-			dispatcher = request.getRequestDispatcher("/url_rewrite.jsp");
+		switch (prepareMethod) {
+		case "prepare_url_rewrite":
+			// Nothing to do here
+		case "prepare_hidden_field":
 			request.setAttribute("field", field);
+			request.getRequestDispatcher( prepareMethod + ".jsp").forward(request, response);
 			break;
-		case HIDDEN_FIELD:
-			dispatcher = request.getRequestDispatcher("/hidden_field.jsp");
-			request.setAttribute("field", field);
-			break;
-		case SESSION:
-			dispatcher = request.getRequestDispatcher("/session.jsp");
+		case "prepare_session":
 			request.getSession().setAttribute("field", field);
+			response.sendRedirect( prepareMethod + ".jsp");
 			break;
-		case COOKIE:
-			dispatcher = request.getRequestDispatcher("/cookie.jsp");
+		case "prepare_cookie":
 			Cookie fieldCookie = new Cookie("field", URLEncoder.encode(field, StandardCharsets.UTF_8));
 			response.addCookie(fieldCookie);
+			response.sendRedirect(prepareMethod + ".jsp");
 			break;
 		default:
-			throw new IllegalArgumentException("Unexpected value: " + stateManagementMethod);
+			throw new IllegalArgumentException("Unexpected value: " + prepareMethod);
 		}
 
-		dispatcher.forward(request, response);
 	}
-
 }
