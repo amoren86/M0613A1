@@ -25,14 +25,14 @@ public class PrepareStateManagementServlet extends HttpServlet {
 
 		switch (prepareMethod) {
 		case "prepare_url_rewrite":
-			// Nothing to do here
+			// No break here, we want to do the same as the next case
 		case "prepare_hidden_field":
 			request.setAttribute("field", field);
-			request.getRequestDispatcher( prepareMethod + ".jsp").forward(request, response);
+			request.getRequestDispatcher(prepareMethod + ".jsp").forward(request, response);
 			break;
 		case "prepare_session":
 			request.getSession().setAttribute("field", field);
-			response.sendRedirect( prepareMethod + ".jsp");
+			response.sendRedirect(prepareMethod + ".jsp");
 			break;
 		case "prepare_cookie":
 			Cookie fieldCookie = new Cookie("field", URLEncoder.encode(field, StandardCharsets.UTF_8));
