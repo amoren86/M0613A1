@@ -30,13 +30,13 @@ public class PrepareStateManagementServlet extends HttpServlet {
 			request.setAttribute("field", field);
 			request.getRequestDispatcher(prepareMethod + ".jsp").forward(request, response);
 			break;
-		case "prepare_session":
-			request.getSession().setAttribute("field", field);
-			response.sendRedirect(prepareMethod + ".jsp");
-			break;
 		case "prepare_cookie":
 			Cookie fieldCookie = new Cookie("field", URLEncoder.encode(field, StandardCharsets.UTF_8));
 			response.addCookie(fieldCookie);
+			response.sendRedirect(prepareMethod + ".jsp");
+			break;
+		case "prepare_session":
+			request.getSession().setAttribute("field", field);
 			response.sendRedirect(prepareMethod + ".jsp");
 			break;
 		default:

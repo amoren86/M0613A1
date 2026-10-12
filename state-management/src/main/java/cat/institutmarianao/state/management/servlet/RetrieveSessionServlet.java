@@ -8,7 +8,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/retrieve_session")
+@WebServlet({ "/retrieve_session" })
 public class RetrieveSessionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
