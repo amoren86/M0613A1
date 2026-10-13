@@ -9,10 +9,12 @@ import jakarta.annotation.security.PermitAll;
 import jakarta.annotation.security.RolesAllowed;
 import jakarta.ejb.Stateless;
 
-@DeclareRoles({ "librarian" })
+// The class is annotated with @DeclareRoles to declare the roles "librarian" and "user".
+@DeclareRoles({ "librarian", "user" })
 @Stateless
 public class LibraryBean implements LibraryBeanLocal {
 
+	// The catalog method is only accessible to users with the "librarian" role
 	@RolesAllowed({ "librarian" })
 	@Override
 	public String catalog(String book) {
@@ -21,6 +23,7 @@ public class LibraryBean implements LibraryBeanLocal {
 		return "isbn: " + isbn + ", title: " + book + ", author: John Doe";
 	}
 
+	// The checkAvailability method is accessible to all users
 	@PermitAll
 	@Override
 	public boolean checkAvailability(String book) {
@@ -28,6 +31,7 @@ public class LibraryBean implements LibraryBeanLocal {
 		return "java".equalsIgnoreCase(book);
 	}
 
+	// The borrow method is denied to all users
 	@DenyAll
 	@Override
 	public boolean borrow(String book) {
