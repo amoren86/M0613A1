@@ -9,11 +9,11 @@
 	</welcome-file-list>
 
 	<security-role>
-		<description />
+		<description>User role, which can check availability of a book</description>
 		<role-name>user</role-name>
 	</security-role>
 	<security-role>
-		<description />
+		<description>Librarian role, which can also catalog books</description>
 		<role-name>librarian</role-name>
 	</security-role>
 

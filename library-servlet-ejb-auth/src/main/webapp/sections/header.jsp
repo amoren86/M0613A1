@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 <header>
-	<h1>Auth</h1>
+	<h1>Library</h1>
 	<p>An app by Institut Marianao</p>
 </header>
