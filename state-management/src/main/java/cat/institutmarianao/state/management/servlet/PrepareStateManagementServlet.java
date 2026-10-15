@@ -24,9 +24,7 @@ public class PrepareStateManagementServlet extends HttpServlet {
 		String prepareMethod = request.getParameter("prepare_method");
 
 		switch (prepareMethod) {
-		case "prepare_url_rewrite":
-			// No break here, we want to do the same as the next case
-		case "prepare_hidden_field":
+		case "prepare_url_rewrite", "prepare_hidden_field":
 			request.setAttribute("field", field);
 			request.getRequestDispatcher(prepareMethod + ".jsp").forward(request, response);
 			break;

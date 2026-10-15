@@ -37,7 +37,7 @@ public class RetrieveCookieServlet extends HttpServlet {
 	private String getCookieValue(HttpServletRequest request, String cookieName) {
 		Cookie[] cookies = request.getCookies();
 		if (cookies != null) {
-			for (var cookie : request.getCookies()) {
+			for (var cookie : cookies) {
 				if (cookieName.equals(cookie.getName())) {
 					return URLDecoder.decode(cookie.getValue(), StandardCharsets.UTF_8);
 				}
